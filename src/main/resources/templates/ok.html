@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <script src="webjars/jquery/3.4.1/jquery.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<div id="div01" class="mydiv" th:id="${name}" th:class="${name}"></div>
+
+<div th:text="${hello}"></div>
+<div th:utext="${hello}"></div>
+
+<div>[[${hello}]]</div>
+<div>[(${hello})]</div>
+
+<h4 th:text="${user} th:each="user:${users}"></h4>
+<hr>"
+<h4>
+    <span th:each="user:${users}">[[${user}]]</span>
+</h4>
+
+    <br>
+<button id="bt1" >tese</button>
+
+    <script>
+
+        $("#bt1").click(function () {
+            alert("hello wor");
+        })
+
+    </script>
+</body>
+</html>
