@@ -58,7 +58,7 @@
 						<div class="form-group">
 							<label for="inputusername">员工姓名</label>
 							<input type="username"  name="lastName"
-
+							datatype="*2-50"
 								   required="required" class="form-control" id="inputusername" placeholder="username">
 						</div>
 
@@ -100,6 +100,10 @@
 
 							<button type="submit" class="btn btn-primary" >添加</button>
 					</form>
+					<form class="form-control"></form>
+					<input type="text" class="form-control"  id="enterpriseName"
+						   name="enterpriseName" placeholder="企业全名"
+						   datatype="*2-100" errormsg="请输入2~100个字母、数字或汉字" nullmsg="请输入企业全名" />
 				</main>
 			</div>
 		</div>
@@ -112,7 +116,7 @@
 		<script type="text/javascript"  th:src="@{/webjars/bootstrap/4.0.0/js/bootstrap.js}"></script>
 
 		<!-- Icons -->
-		<script type="text/javascript"  th:src="@{/asserts/js/feather.min.js}"></script>
+		<script type="text/javascript"  th:src="@{asserts/js/feather.min.js}"></script>
 		<script>
 			feather.replace()
 		</script>

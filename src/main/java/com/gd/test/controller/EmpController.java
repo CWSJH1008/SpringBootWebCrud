@@ -1,10 +1,13 @@
 package com.gd.test.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.gd.test.Bean.Depart;
 import com.gd.test.dao.DepartmentDao;
 import com.gd.test.dao.EmployeeDao;
 import com.gd.test.entities.Department;
 import com.gd.test.entities.Employee;
+import com.gd.test.service.ServiceIf;
+import com.gd.test.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,7 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import javax.sql.DataSource;
 import java.util.Collection;
-
+import java.util.List;
 
 
 /**
@@ -29,7 +32,9 @@ public class EmpController {
     private DepartmentDao departmentDao;
 /*    @Autowired
     DataSource dataSource*/;
-
+    @Autowired
+    //private ServiceImpl serviceIf;
+    private ServiceIf serviceIf;
     private Collection<Employee> all;
     private Collection<Department> departments;
     private String string;
@@ -38,11 +43,9 @@ public class EmpController {
     //员工列表
     @GetMapping("/emp")
     public String list(Model model){
+        List<Depart> departs = serviceIf.selectAllDepart();
+        System.out.println(departs);
         all = employeeDao.getAll();
-        /*for(Employee emp:all){
-            System.out.println(emp);
-        }*/
-        //System.out.println(dataSource);
         model.addAttribute("emplist",all);
         return "emp/list";
     }
