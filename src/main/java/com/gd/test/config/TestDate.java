@@ -22,7 +22,7 @@ public class TestDate {
         date = new Date();
         System.out.println(date);
         simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        System.out.println("hellotT");
+        System.out.println("hellotCLone");
         format = simpleDateFormat.format(date);
         System.out.println(format);
         instance = Calendar.getInstance();
